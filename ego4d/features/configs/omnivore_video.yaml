@@ -13,20 +13,20 @@ inference_config:
   prefetch_factor: 2
   fps: 30
   frame_window: 32
-  stride: 16
+  stride: 6
   include_audio: false
   include_video: true
 schedule_config:
   run_locally: false
   log_folder: slurm_log/%j
-  timeout_min: 720
+  timeout_min: 3600
   constraint: volta
   slurm_partition: pixar
   slurm_array_parallelism: 256
   gpus_per_node: 1
   cpus_per_task: 10
-  overhead: 2.0
-  time_per_forward_pass: 0.8
+  overhead: 2.5
+  time_per_forward_pass: 1.6
   schedule_time_per_node: 10.0
 model_config:
   model_name: "omnivore_swinB"
